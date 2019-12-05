@@ -57,3 +57,30 @@ Use inferred product category groups and ground truth (from Step 2) to evaluate 
 
 ### Step 6: VISUALIZATION (pending)
 Use ground truth and the numerical vector representations for each node to plot the “correct” visualization of the amazon co-purchase network. Also, use inferred product category groups and the numerical vector representations for each node to plot the “inferred” visualization of the amazon co-purchase network.
+
+
+
+
+## Second Reserach Question:
+Exploring the dataset: which category has the best rating from customers?
+
+## Details: 
+What we have is the rating for every products from 1 to 5, and the higher the better. Due to diverse customers, normalize the grades first, calculating the weight by volume of product over volume of category it’s in. Final analytics comes from histogram graphs. Major one renders rating between categories. Use asymptote to draw the tendency clearly. 
+
+### Step 1: Data Capture (done)
+Directly download from the following link
+https://snap.stanford.edu/data/bigdata/amazon/amazon-meta.txt.gz
+
+### Step 2: Extracting (done)
+Read the data file amazon-meta.txt in C++ by Visual Studio 2019, splitting the data by line, extracting core data we need for each product: ID, ASIN, Group, Categories, Reviews, where Reviews have three distributions: total, download, avg rating. 
+
+### Step 3: Rating Calculation(done)
+Here we have the review four groups: Books, Music, DVDs, Video and every product in each group has specific total(people rated). We suppose to calculate the simply average rating for groups distribution. To exploring the dataset, we also want to catch up the weighted rating. It is because we have different number of people to rate each product, the simple average may lead to unfair results. To solve it, we divide the rating numbers by total numbers. It has difference between these to methods and we can figure out which one is fairer. 
+
+### Step 4: Visualization(done)
+Histogram: For unnormalized: Y axis represents the number of people vote for this rating(range from 1 to 5, both included). X axis is the ratings. We can hold four groups in one canvas or separate them into four canvas, depends on what we need.
+For normalized: Y axis represents the ratio that number of people vote for this rating divided by voting number of this group. It’s sort of weight for rating. Due to it’s the ratio, we don’t add the unit to name it. 
+
+### Step 5: Evluation 
+For rating categories, draw the fitted line for histogram, then conclude popularity of each group. Compare between two methods, defining which one is better for this real problem. Standing at the point of Amazon, get the decision about which group is most popular among the customers. 
+
