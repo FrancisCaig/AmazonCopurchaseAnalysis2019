@@ -61,6 +61,11 @@ Use ground truth and the numerical vector representations for each node to plot 
 
 
 
+
+
+
+
+
 ## Second Reserach Question:
 Exploring the dataset: which category has the best rating from customers?
 
